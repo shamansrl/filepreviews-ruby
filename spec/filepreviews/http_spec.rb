@@ -15,8 +15,8 @@ describe Filepreviews::HTTP do
       end
 
       it 'configures the Typhoeus Adapter' do
-        expect(http.default_connection.builder.handlers)
-          .to include(Faraday::Adapter::Typhoeus)
+        expect(http.default_connection.builder.adapter)
+          .to eq(Faraday::Adapter::Typhoeus)
       end
     end
   end
